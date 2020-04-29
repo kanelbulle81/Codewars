@@ -1,5 +1,14 @@
 # CodeWars Title Case
 def title_case(title, minor_words=""):
+    # " ".join(minor_word[i] if word.lower() in minor_words.split().lower() for minor_word in minor_words else word for word in title.title().split())
+    s = title.title()
+    for word in s.lower().split()[1:]:  # ['clash','of','kings']
+        for i, word in enumerate(minor_words.lower().split()):  #
+            s = s.replace(word, minor_words.split().index(word))
+    return s
+
+
+"""
     for word in title.split()[1:]:
         if not minor_words:
             return title.title()
@@ -10,6 +19,7 @@ def title_case(title, minor_words=""):
                         word, minor_word[minor_word.find(word)]
                     )
     # return title
+    """
 
 
 print(title_case(""), "")
@@ -19,3 +29,4 @@ print(title_case("the quick brown fox"))  # "The Quick Brown Fox"
 
 # str.title()
 # str.replace('DC', 'Marvel')
+# [x for x in a if x in b]

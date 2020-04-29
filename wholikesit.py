@@ -4,12 +4,13 @@
 def likes(names):
 
     n = len(names)
+
     return {
         0: "no one likes this",
-        1: f"{names} likes this",
-        2: f"{names[0]} and {names[1]} like this",
-        3: f"{names[0]}, {names[1]} and {names[3]} like this",
-        4: f"{names[0]}, {names[1]} and {len(names) - 2} like this",
+        1: f"{*names} likes this",
+        2: f"{*names} and {*names} like this",
+        3: f"{*names}, {*names} and {*names} like this",
+        4: f"{*names}, {*names} and {len(names) - 2} like this",
     }[min(4, n)]
 
     """
