@@ -4,13 +4,21 @@
 def multiplication_table(size):
     table = []
     row = []
-    for a in range(1, size * size + 1, size):
-        print(a)
-        for b in range(2, size + 1):
-            print(b)
-        # row.append(b * a)
-        # table.append(row)
-    # return table
+    for a in range(1, size + 1, size):
+        for b in range(1, size + 1, size):
+            row.append(a * b)
+        table.append(row)
+    return table
+
+    """
+    table = []
+    row = []
+    for a in range(1, size + 1):
+        for b in range(1, size + 1, size):
+            row.append(a * b)
+        table.append(row)
+    return table
+    """
 
 
 print(multiplication_table(3))
