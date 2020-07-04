@@ -1,53 +1,28 @@
 """ Codewars - Multiplication table """
+from timeit import timeit
 
+setup = """
+from random import randrange
+size = randrange(1, 6)
+"""
 
-def multiplication_table(size):
+comp = """
+def multiplication_table_lc(size):
+    return [[a * b for b in range(1, size + 1)] for a in range(1, size + 1)]
+"""
+
+loop = """
+def multiplication_table_fl(size):
     table = []
-    row = []
-    for a in range(1, size + 1, size):
-        for b in range(1, size + 1, size):
-            row.append(a * b)
-        table.append(row)
-    return table
-
-    """
-    table = []
-    row = []
     for a in range(1, size + 1):
-        for b in range(1, size + 1, size):
+        row = []
+        for b in range(1, size + 1):
             row.append(a * b)
         table.append(row)
     return table
-    """
-
-
-print(multiplication_table(3))
-# , [[1, 2, 3], [2, 4, 6], [3, 6, 9]]
-
 """
-    [
-        [1,2],
-        [2,4]
-    ]
-    [
-        [1, 2, 3],
-        [2, 4, 6],
-        [3, 6, 9]
-    ]
-    [
-        [1,2,3,4],
-        [2,4,6,8],
-        [3,6,9,12],
-        [4,8,12,16]    
-    ]
-    [
-        [1,2,3,4,5],
-        [2,4,6,8,10],
-        [3,6,9,12,15],
-        [4,8,12,16,20],
-        [5,10,15,20,25]
-    ]
-    
 
-
-"""
+print(timeit(setup=setup, stmt=comp, number=100))
+print(timeit(setup=setup, stmt=loop, number=100))
+# print(multiplication_table_lc(n))
+# print(multiplication_table_fl(n))
