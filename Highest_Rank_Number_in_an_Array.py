@@ -4,7 +4,8 @@
 def highest_rank(arr):
     # return max(set(arr), key=arr.count)
     # return max(arr, key=arr.count)
-    return max((arr.count(element), element) for element in set(arr))
+    # return max((arr.count(element), element) for element in set(arr))
+    return max(arr.count(element) for element in set(arr))
 
 
 print(highest_rank([12, 10, 8, 12, 7, 6, 4, 10, 12]), 12)

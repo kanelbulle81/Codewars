@@ -1,7 +1,33 @@
-# CodeWars - String incrementer
+""" CodeWars - String incrementer
+    https://www.codewars.com/kata/54a91a4883a7de5d7800009c/train/python
+"""
 
 
-def isOfLengthFour(i):
+def increment_string(strng):
+    # alphas = {i: j for i, j in enumerate(strng.split()) if j.isalpha()}
+    # nums = {i: j for i, j in enumerate(strng.split()) if j.isnumeric()}
+    # return strng.split(), alphas, nums
+    # a = strng[0]
+    # a.isnum
+
+    bla = strng
+    i = 0
+    while bla.isalpha():  # or i != len(bla):
+        bla = bla[i:]
+        i += 1
+    return bla
+
+
+# print(increment_string("foo"))
+print(increment_string("foobar001"))
+print(increment_string("foobar1"))
+print(increment_string("foobar00"))
+print(increment_string("foobar99"))
+print(increment_string("foobar099"))
+print(increment_string(""))
+
+
+""" def isOfLengthFour(i):
     return True if len(i) == 4 else False
 
 
@@ -49,11 +75,4 @@ def increment_string2(strng):
     # return [char for char in reversed(strng) if char.isdigit()}
     # return strng.replace(strng[len(strng) - len()])
 
-
-print(increment_string2("foo"))
-print(increment_string2("foobar001"))
-print(increment_string2("foobar1"))
-print(increment_string2("foobar00"))
-print(increment_string2("foobar99"))
-print(increment_string2("foobar099"))
-print(increment_string2(""))
+    """

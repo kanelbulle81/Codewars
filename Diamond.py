@@ -1,18 +1,18 @@
-# CodeWars Give me a Diamond
-
-import statistics
+"""
+CodeWars Give me a Diamond
+https://www.codewars.com/kata/5503013e34137eeeaa001648/train/python
+"""
 
 
 def diamond(n):
     # Make some diamonds!
-    # return "*"
-    return "".join(
-        " " * (n // 2) + i * "*" + "\n"
-        for i in range(1, n)
-        for i in reversed(range(1, n + 1))
-    )
+    return "".join(" " * (n // 2) + i * "*" + "\n" for i in range(1, n + 1, 2))
 
-    # return " " * (n) + "*\n"
+    # return "".join(
+    #     " " * (n // 2) + i * "*" + "\n"
+    #     for i in range(1, n)
+    #     for i in reversed(range(1, n + 1))
+    # )
 
 
 print(diamond(7))
